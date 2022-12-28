@@ -1,0 +1,430 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.homepage {
+  background-image: linear-gradient(to right, black, #23BE75);
+  color: white;
+  background-size: 100%;
+}
+.homepage .homeContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.homepage .homeContent div {
+  margin-top: 3rem;
+}
+.homepage .homeContent div a {
+  text-decoration: none;
+  background-image: linear-gradient(to right, #23BE75, #09834a);
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  cursor: pointer;
+}
+.homepage .homeContent div a:hover {
+  background-image: linear-gradient(to left, #23BE75, #09834a);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+  color: white;
+}
+.navbar i {
+  background-color: #555555;
+  text-align: center;
+  padding: 1rem;
+  margin-left: 3rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.quizz {
+  background-image: url(/design/img/backgroundDarkMode.svg);
+  background-size: 300%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.quizzContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+}
+.quizzContainer .userName input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.stepperComponentParent {
+  display: flex;
+  justify-content: center;
+}
+
+.stepperComponent {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+.stepperComponent div {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 15px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+}
+.stepperComponent div::after {
+  content: "";
+  width: 13.75rem;
+  height: 5px;
+  background-color: black;
+  position: absolute;
+  right: 2rem;
+  bottom: 1rem;
+}
+.stepperComponent div.step1::after {
+  width: 0;
+  height: 0;
+}
+.stepperComponent div.active {
+  background-color: #23BE75;
+  transition: 0.6s;
+}
+.stepperComponent div.active::after {
+  background-color: #23BE75;
+  transition: 0.6s;
+}
+.stepperComponent div i {
+  background-color: #23BE75;
+}
+
+.titlesStepperParent {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.titlesStepper {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  color: white;
+}
+
+.quizzContainer .rules, .quizzContainer .result, .quizzContainer .questions {
+  display: none;
+  color: white;
+  background-color: #555555;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 60%;
+  margin-top: 3rem !important;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.2);
+  -webkit-animation-name: display;
+          animation-name: display;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+@-webkit-keyframes display {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes display {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.quizzContainer .titles {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  font-weight: bold;
+}
+.quizzContainer button {
+  background-color: #23BE75;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+.quizzContainer button:hover {
+  background-color: #09834a;
+  cursor: pointer;
+}
+.quizzContainer .next_button {
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+}
+.quizzContainer p {
+  background-color: inherit;
+}
+
+#counter {
+  display: none;
+  background-color: inherit;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 60%;
+  box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.2);
+}
+#counter span {
+  background-color: inherit;
+  display: block;
+  width: 100%;
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+  font-size: 100px;
+  color: white;
+}
+
+.quizzContainer .questions {
+  display: none;
+  margin-top: 20px;
+}
+.quizzContainer .questions .timerQuestions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  background-color: black;
+  width: 10%;
+  border-radius: 10px;
+}
+.quizzContainer .questions .timerQuestionsSecondes {
+  background-color: inherit;
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 10px;
+}
+.quizzContainer .questions .answers {
+  background-color: inherit;
+  margin: 10px 10px;
+}
+.quizzContainer .questions label {
+  background-color: inherit;
+}
+.quizzContainer .questions .questionsAnswers {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+}
+.quizzContainer .questions #currentQuestion {
+  background-color: inherit;
+}
+.quizzContainer .questions #maxQuestions {
+  background-color: inherit;
+}
+.quizzContainer .questions .question {
+  background-color: inherit;
+  padding: 10px 20px;
+}
+.quizzContainer .questions .next_button_question {
+  background-color: black !important;
+  margin-right: 5px;
+}
+.quizzContainer .questions .next_button_question:hover {
+  background-color: #222 !important;
+}
+.quizzContainer .questions .QuestionsButtons {
+  display: flex;
+}
+.quizzContainer .questions .QuestionsButtons button {
+  margin-left: 5px;
+}
+
+.bar {
+  display: none;
+  width: 60%;
+  margin-top: 2rem;
+  height: 1rem;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+}
+
+.barLevel {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  background-color: #23BE75;
+  transition: 1s ease 0.3s;
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 210px;
+  padding: 5px 10px;
+}
+
+.loading_questions {
+  display: none;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-color: inherit;
+}
+
+.loading_questions:after {
+  content: " ";
+  display: block;
+  background-color: inherit;
+  width: 50px;
+  height: 50px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #23BE75;
+  border-color: #23BE75 transparent #23BE75 transparent;
+  -webkit-animation: loading_questions 1.2s linear infinite;
+          animation: loading_questions 1.2s linear infinite;
+}
+
+@-webkit-keyframes loading_questions {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading_questions {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loadingQuizz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 160px;
+  padding: 5px 10px;
+}
+
+.loadingQ {
+  display: none;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.loadingQ:after {
+  content: " ";
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #23BE75;
+  border-color: #23BE75 transparent #23BE75 transparent;
+  -webkit-animation: loadingQ 1.2s linear infinite;
+          animation: loadingQ 1.2s linear infinite;
+}
+
+@-webkit-keyframes loadingQ {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingQ {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.quizzContainer .result {
+  display: none;
+}
+.quizzContainer .result .score {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+}
+.quizzContainer .result .answersFinal {
+  width: 50%;
+  margin: 1rem auto;
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+}
+.quizzContainer .result .answersFinal .correctAnswers {
+  margin-bottom: 1rem;
+  background-color: inherit;
+}
+.quizzContainer .result .answersFinal .wrongAnswers {
+  background-color: inherit;
+}
+.quizzContainer .result a {
+  text-decoration: none;
+  background-color: black;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.quizzContainer .result a:hover {
+  background-color: #222;
+}
+.quizzContainer .result .barResult {
+  margin: auto;
+  width: 50%;
+  height: 16px;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+}
+.quizzContainer .result .barResult .barResultLevel {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  background-color: #23BE75;
+  transition: 1s ease 0.3s;
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+}/*# sourceMappingURL=style.css.map */
