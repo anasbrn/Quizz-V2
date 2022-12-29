@@ -13,12 +13,15 @@
         <div class="breadcrumbs" id="breadcrumbs">
             <ul style="list-style: none; display: flex; padding: 0;">
                 <li style="margin-right: 5px; color: gray;">Home</li>
-                <li style="margin-right: 5px;">/</li>
+                <li style="margin-right: 5px;">></li>
                 <li><a onclick="loadingQuizz()" style="text-decoration: none; color: white; cursor: pointer;" id="quizzBreadCrumbs">Quizz</a></li>
             </ul>
         </div>
-        <div class="logo"><img src="/design/img/logo.svg" alt="" width="400">
+
+        <div class="logo">
+            <img src="/design/img/logo.svg" alt="" width="400">
         </div>
+        
         <div class="lightmode" id="lightmode" ><i class="fa fa-sun" onclick="lightmode()"></i></div>
         <div style="display: none;" class="darkmode" id="darkmode" ><i class="fa fa-moon" onclick="darkmode()"></i></div>
     </div>

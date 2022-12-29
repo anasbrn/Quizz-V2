@@ -12,7 +12,7 @@
     <div class="navbar">
         <div class="breadcrumbs" id="breadcrumbs">
             <ul style="list-style: none; display: flex; padding: 0;">
-                <li style="margin-right: 5px;"><a href="../../index.html" style="text-decoration: none; color: white;" id="homeBreadcrumbs">Home</a></li>
+                <li style="margin-right: 5px;"><a href="../../index.php" style="text-decoration: none; color: white;" id="homeBreadcrumbs">Home</a></li>
                 <li style="margin-right: 5px;">/</li>
                 <li style="margin-right: 5px; color: gray;">Quizz</li>
             </ul>
@@ -42,11 +42,33 @@
     <div class="quizzContainer">
 
 
-        <section class="userName" id="userName">
+        <section class="login" id="login">
             <div>
-                <form action="">
-                    <input type="text" name="username" id="username" placeholder="Enter your name" required>
-                    <button type="button" onclick="stepperCompenantStep1(); getStarted()">Start</button>
+                <form action="/classes/User.php" method="post">
+                    <div class="firstName">
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="Enter your first name" required>
+                    </div>
+
+                    <div>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Enter your last name" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div>
+                        <label for="register"></label>
+                        <button type="submit" name="register" id="register">Register</button>
+                    </div>
                 </form>
             </div>
         </section>
@@ -138,7 +160,7 @@
             </div>
                 <div style="display: flex; justify-content: center;">
                 <a style="margin-right: 10px;" onclick="replayQuizz()">Replay quizz</a>
-                <a href="../../index.html">Home page</a>
+                <a href="../../index.php">Home page</a>
             </div>
         </div>
     </div>

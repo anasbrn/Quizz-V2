@@ -58,14 +58,27 @@
   flex-direction: column;
   height: 60vh;
 }
-.quizzContainer .userName input {
+.quizzContainer .login {
+  color: white;
+  background-color: #555555;
+  padding: 3rem 5rem;
+  border-radius: 10px;
+  margin-top: 5rem;
+}
+.quizzContainer .login div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.quizzContainer .login input {
   padding: 10px;
   border: none;
   border-radius: 10px;
 }
 
 .stepperComponentParent {
-  display: flex;
+  display: none;
   justify-content: center;
 }
 
@@ -109,7 +122,7 @@
 }
 
 .titlesStepperParent {
-  display: flex;
+  display: none;
   justify-content: center;
   margin-top: 1rem;
 }

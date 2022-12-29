@@ -80,8 +80,22 @@
     flex-direction: column;
     height: 60vh;
 
-    .userName{
+    .login{
+        color: white;
+        background-color: $content;
+        padding: 3rem 5rem;
+        border-radius: 10px;
+        margin-top: 5rem;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-bottom: 1rem;
+        }
+
         input{
+            // width: 100%; 
             padding: 10px;
             border: none;
             border-radius: 10px;
@@ -92,7 +106,7 @@
 
 //stepper component
 .stepperComponentParent{
-    display: flex;
+    display: none;
     justify-content: center;
 }
 
@@ -151,7 +165,7 @@
 }
 
 .titlesStepperParent{
-    display: flex;
+    display: none;
     justify-content: center;
     margin-top: 1rem;
 }

@@ -112,23 +112,23 @@ function loadingQuizz(){
     }, 100);
 
     window.setTimeout(function(){
-        window.location.assign('/starter/assets/quizz.html') ;
+        window.location.assign('/starter/assets/quizz.php') ;
     },500) ;
 }
 
 
-function getStarted(){
-    document.getElementById('loadingQuizz').style.display = "block" ;
-    document.getElementById('userName').style.display = "none" ;
+// function getStarted(){
+//     document.getElementById('loadingQuizz').style.display = "block" ;
+//     document.getElementById('userName').style.display = "none" ;
     
-    setTimeout(function() {
-        $('#loadingQuizz').fadeOut('100');
-    }, 3000);
-    setTimeout(function() {
-        $('#rules').fadeIn('100');
-    }, 3500);
+//     setTimeout(function() {
+//         $('#loadingQuizz').fadeOut('100');
+//     }, 3000);
+//     setTimeout(function() {
+//         $('#rules').fadeIn('100');
+//     }, 3500);
     
-}
+// }
 
 
 function switchFromRulesToCounter(){
@@ -362,7 +362,7 @@ function determineTheCorrectanswer(){
 
         if(score >= (quizzQuestions.length / 2)){
             finalScore(score, quizzQuestions.length) ;
-            var user = document.getElementById('username').value ;
+            // var user = document.getElementById('username').value ;
             document.getElementById('barResult').style.backgroundColor = '#ff0000' ;
             document.getElementById('correctAnswers').innerText = 'Correct answers:' + " " + score ; 
             document.getElementById('wrongAnswers').innerText   = 'Wrong answers:' + " " + wrong ; 
@@ -371,7 +371,7 @@ function determineTheCorrectanswer(){
  
         else{
             finalScore(score, quizzQuestions.length) ;
-            var user = document.getElementById('username').value ;
+            // var user = document.getElementById('username').value ;
             document.getElementById('barResult').style.backgroundColor = '#ff0000' ;
             document.getElementById('correctAnswers').innerText = 'Correct answers:' + " " + score ;
             document.getElementById('wrongAnswers').innerText   = 'Wrong answers:' + " " + wrong ; 
@@ -381,11 +381,11 @@ function determineTheCorrectanswer(){
 }
 
 
-function stepperCompenantStep1(){
-    document.getElementById('step1').classList.add('active') ;
-    document.getElementById('step1').innerHTML = `<i class="fa fa-check"></i>`;
+// function stepperCompenantStep1(){
+//     document.getElementById('step1').classList.add('active') ;
+//     document.getElementById('step1').innerHTML = `<i class="fa fa-check"></i>`;
     
-}
+// }
 
 
 function stepperCompenantStep2(){
