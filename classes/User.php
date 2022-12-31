@@ -1,5 +1,5 @@
 <?php
-    include 'Database.php' ;
+    include_once 'Database.php' ;
 
     class User{
         private $firstName = "anas";
@@ -53,6 +53,50 @@
             $this->password = $password ;
         }
 
+        public static function signIn(){
+            $email      = $_POST['email'] ;
+            $password   = $_POST['password'] ;
+            $ip         = getIPAddress();  
+            $os         = getOperatingSystem() ;
+            $browser    = getBrowser() ;
+    
+            $contestant = new User("", "", $email, $password) ;
+    
+            $email      = $contestant->getEmail() ;
+            $password   = $contestant->getPassword() ;
+    
+            $connection = new Database ;
+            $connection = $connection->connect() ;
+            $query      = "SELECT * FROM user WHERE email = '$email' AND password = '$password' " ;
+            $stmt       = $connection->query($query) ;
+            $data       = $stmt->fetch() ;
+            $result     = $stmt->rowCount();
+            
+            if ($result > 0){
+                $query      = "UPDATE user SET  ipAddress = '$ip', os = '$os', browser = '$browser' " ;
+                $stmt       = $connection->query($query) ;
+                $_SESSION['id'] = $data['userId'] ;
+                echo $_SESSION['id'] ;
+            }
+            
+            else{
+                echo 'Invalid account' ;
+            }
+            header('location: ../starter/assets/quizz.php') ;
+        }
+
+        public static function nameOfContestant(){
+            $id = 1;
+            // echo $_SESSION['id'];
+            $connection = new Database ;
+            $connection = $connection->connect() ;
+            $query      = "SELECT firstName FROM user WHERE userId = $id " ;
+            $stmt       = $connection->query($query) ;
+            $data       = $stmt->fetch() ;
+    
+            return $data['firstName'] ;
+        }
+
     }
 
 
@@ -82,35 +126,9 @@
 
     }
 
-    function signIn(){
-        $email      = $_POST['email'] ;
-        $password   = $_POST['password'] ;
-        $ip         = getIPAddress();  
-        $os         = getOperatingSystem() ;
-        $browser    = getBrowser() ;
+    
 
-        $contestant = new User("", "", $email, $password) ;
-
-        $email      = $contestant->getEmail() ;
-        $password   = $contestant->getPassword() ;
-
-        $connection = new Database ;
-        $connection = $connection->connect() ;
-        $query      = "SELECT * FROM user WHERE email = '$email' AND password = '$password' " ;
-        $stmt       = $connection->query($query) ;
-        $data       = $stmt->fetch() ;
-        $result     = $stmt->rowCount();
-
-        if ($result > 0){
-            $query      = "UPDATE user SET  ipAddress = '$ip', os = '$os', browser = '$browser' " ;
-            $stmt       = $connection->query($query) ;
-            header('location: ../index.php') ;
-        }
-
-        else{
-            echo 'Invalid account' ;
-        }
-    }
+    
 
     //////////////////////////
     function getBrowser(){
@@ -172,4 +190,4 @@
     
 
     if(isset($_POST['register'])) signUp() ;
-    if(isset($_POST['signIn'])) signIn() ;
+    if(isset($_POST['signIn'])) User::signIn() ; User::nameOfContestant() ;

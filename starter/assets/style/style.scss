@@ -106,7 +106,7 @@
 
 //stepper component
 .stepperComponentParent{
-    display: none;
+    display: flex;
     justify-content: center;
 }
 
@@ -128,7 +128,7 @@
 
         &::after{
             content: "";
-            width: 13.75rem;
+            width: 15.75rem;
             height: 5px;
             background-color: $dark;
             position: absolute;
@@ -165,7 +165,7 @@
 }
 
 .titlesStepperParent{
-    display: none;
+    display: flex;
     justify-content: center;
     margin-top: 1rem;
 }
@@ -181,7 +181,7 @@
 //rules
 .quizzContainer{
     .rules{
-        display: none;
+        display: block;
         color: $text;
         background-color: $content;
         padding: 5px 10px;

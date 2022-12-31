@@ -1,3 +1,8 @@
+<?php
+    include '../../Classes/GetData.php' ;
+    include '../../Classes/User.php' ;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +14,9 @@
     <title>QuizzYD</title>
 </head>
 <body class="quizz" id="quizz">
+    <?php 
+        GetData::getQuestions() ;
+    ?>
     <div class="navbar">
         <div class="breadcrumbs" id="breadcrumbs">
             <ul style="list-style: none; display: flex; padding: 0;">
@@ -41,38 +49,6 @@
 
     <div class="quizzContainer">
 
-
-        <section class="login" id="login">
-            <div>
-                <form action="/classes/User.php" method="post">
-                    <div class="firstName">
-                        <label for="firstName">First Name</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="Enter your first name" required>
-                    </div>
-
-                    <div>
-                        <label for="lastName">Last Name</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Enter your last name" required>
-                    </div>
-
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <div>
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Enter your password" required>
-                    </div>
-
-                    <div>
-                        <label for="register"></label>
-                        <button type="submit" name="register" id="register">Register</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
         <div class="loadingQuizz" id="loadingQuizz" style="display: none;">
             <div class="loadingQ" id="loadingQ"></div>
         </div>
@@ -80,7 +56,7 @@
       
         
         <div id="rules" class="rules">
-            <div class="titles">QuizzYD Rules</div>
+            <div class="titles">Quizz Rules</div>
             <p>1. You have 30 secondes in every question.</p>
             <p>2. You can't pass to the next question until you answer.</p>
             <p>3. You can't see your score until the end of the quizz.</p>
@@ -146,10 +122,12 @@
             </div>
         </div>
 
-        
+        <?php
+            $data = User::nameOfContestant() ;
+        ?>
 
         <div id="result" class="result">
-            <div class="titles" id="congratulations">Completed! You have passed the quizz</div>
+            <div class="titles" id="congratulations">Completed <?= $data ?>!  You have passed the quizz</div>
             <div class="score">Your score is</div>
             <div class="barResult" id="barResult">
                 <div class="barResultLevel" id="barResultLevel"></div>
