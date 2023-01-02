@@ -26,8 +26,11 @@
     </div>
 
     <div class="navbar">
-        <div class="breadcrumbs" id="nameOfContestant">
+        <div class="breadcrumbs" id="nameOfContestant" hidden>
             <?= $_SESSION['firstName'] ?>
+        </div>
+        <div class="logout" id="logout">
+            <i class="fa-solid fa-right-from-bracket" style="background: #333;"></i><a class="logoutAdmin" href="./login/login.php">Logout</a>
         </div>
         <div class="logo"><img src="/design/img/logo.svg" alt="" width="400">
         </div>

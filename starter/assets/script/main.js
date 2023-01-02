@@ -228,7 +228,7 @@ function countDownQuestions(){
     clearInterval(timerId);
     timerId = setInterval(countDownQ, 1000);
     var elem = document.getElementById('timerQuestionsSecondes');
-    elem.innerText = 15;
+    elem.innerText = 30;
     elem.style.background = "#555" ;
     
     function countDownQ() {

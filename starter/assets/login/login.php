@@ -33,14 +33,17 @@
         <section class="login" id="login">
             <div class="signUp" id="signUpSection" style="display: none;">
                 <form action="/classes/User.php" method="post">
-                    <div class="firstName">
-                        <label for="firstName">First Name</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="Enter your first name" required>
-                    </div>
+                    <h1 style="text-align: center;">Sign Up</h1>
+                    <div class="name">
+                        <div class="firstName">
+                            <label for="firstName">First Name</label>
+                            <input type="text" name="firstName" id="firstName" placeholder="Enter your first name" required>
+                        </div>
 
-                    <div>
-                        <label for="lastName">Last Name</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Enter your last name" required>
+                        <div>
+                            <label for="lastName">Last Name</label>
+                            <input type="text" name="lastName" id="lastName" placeholder="Enter your last name" required>
+                        </div>
                     </div>
 
                     <div>
@@ -56,7 +59,7 @@
                     <div>
                         <label for="register"></label>
                         <button type="submit" name="register" id="register">Register</button>
-                        <p>Already have an account? <a class="switchFromSignInToSingUp" onclick="switchFromSignUoToSingIn()" style="cursor: pointer;"><b>Sign In</b></a></p>
+                        <p style="text-align: center;">Already have an account? <a class="switchFromSignInToSingUp" onclick="switchFromSignUoToSingIn()" style="cursor: pointer;" onmouseover="this.style.color = '#23BE75'" onmouseout="this.style.color= 'white'"><b>Sign In</b></a></p>
                     </div>
                 </form>
             </div>
@@ -77,7 +80,7 @@
                     <div>
                         <label for="signIn"></label>
                         <button type="submit" name="signIn" id="signIn">Sign In</button>
-                        <p>You don't have an account? <a class="switchFromSignInToSingUp" onclick="switchFromSignInToSingUp()" style="cursor: pointer;"><b>Sign Up</b></a></p>
+                        <div><p>You don't have an account? <a class="switchFromSignInToSingUp" onclick="switchFromSignInToSingUp()" style="cursor: pointer;" onmouseover="this.style.color = '#23BE75'" onmouseout="this.style.color = 'white'"><b>Sign Up</b></a></p>
                     </div>
                 </form>
             </div>

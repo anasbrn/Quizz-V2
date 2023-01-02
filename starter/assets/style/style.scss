@@ -126,7 +126,7 @@
     .login{
         color: white;
         background-color: $content;
-        padding: 3rem 5rem;
+        padding: 2rem 5rem;
         border-radius: 10px;
         margin-top: 5rem;
 
@@ -142,6 +142,11 @@
             padding: 10px;
             border: none;
             border-radius: 10px;
+        }
+
+        .name{
+            display: flex;
+            flex-direction: row;
         }
     }
     
