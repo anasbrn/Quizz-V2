@@ -1,8 +1,10 @@
 <?php
     include_once 'Database.php' ;
 
+    session_start() ;
+
     class User{
-        private $firstName = "anas";
+        private $firstName;
         private $lastName ;
         private $email ;
         private $password ;
@@ -86,8 +88,7 @@
         }
 
         public static function nameOfContestant(){
-            $id = 1;
-            // echo $_SESSION['id'];
+            $id = $_SESSION['id'] ;
             $connection = new Database ;
             $connection = $connection->connect() ;
             $query      = "SELECT firstName FROM user WHERE userId = $id " ;
@@ -96,6 +97,7 @@
     
             return $data['firstName'] ;
         }
+        
 
     }
 
@@ -124,6 +126,15 @@
 
         header('location: ../starter/assets/user_space/signIn.php') ;
 
+    }
+
+    function scoreOfContestant(){
+        $score = $_POST['barResultLevel'] ;
+        
+        $connection = new Database ;
+        $connection = $connection->connect() ;
+        $query      = "UPDATE user SET score = '$score' " ;
+        $stmt       = $connection->query($query) ;
     }
 
     
@@ -191,3 +202,4 @@
 
     if(isset($_POST['register'])) signUp() ;
     if(isset($_POST['signIn'])) User::signIn() ; User::nameOfContestant() ;
+    if(isset($_POST['submit']))  scoreOfContestant() ;

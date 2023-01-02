@@ -33,7 +33,7 @@
 
     <div class="stepperComponentParent">
         <div class="stepperComponent">
-            <div id="step1" class="step1">1</div>
+            <div id="step1" class="step1 active"><i class="fa fa-check"></i></div>
             <div id="step2" class="step2">2</div>
             <div id="step3" class="step3">3</div>
         </div>
@@ -116,7 +116,9 @@
                 </div>
                 <div class="QuestionsButtons">
                     <button id="nextQuestion" class="next_button_question" onclick="emptyAnswer()">Next question</button>
-                    <button id="submit" style="display: none;" onclick="emptyLastAnswer()">Submit</button>
+                    <!-- <form action="../../classes/User.php" method="POST"> -->
+                        <button id="submit" name="submit" style="display: none;" onclick="emptyLastAnswer(); submitScore()">Submit</button>
+                    <!-- </form> -->
                     <button id="reset" class="reset" onclick="deselectChosenQuestions()">Reset</button>
                 </div>
             </div>
@@ -130,7 +132,9 @@
             <div class="titles" id="congratulations">Completed <?= $data ?>!  You have passed the quizz</div>
             <div class="score">Your score is</div>
             <div class="barResult" id="barResult">
-                <div class="barResultLevel" id="barResultLevel"></div>
+                <!-- <form action="../../classes/User.php" method="POST"> -->
+                    <div class="barResultLevel" name="barResultLevel" id="barResultLevel"></div>
+                <!-- </form> -->
             </div>
             <div class="answersFinal">
                 <div class="correctAnswers" id="correctAnswers">Correct answers: </div>

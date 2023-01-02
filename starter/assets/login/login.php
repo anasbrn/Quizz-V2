@@ -70,7 +70,7 @@
 
                     <div>
                         <label for="signIn"></label>
-                        <button type="submit" name="signIn" id="signIn" onclick="stepperCompenantStep1()">Sign In</button>
+                        <button type="submit" name="signIn" id="signIn">Sign In</button>
                         <p>You don't have an account? <a class="switchFromSignInToSingUp" onclick="switchFromSignInToSingUp()" style="cursor: pointer;"><b>Sign Up</b></a></p>
                     </div>
                 </form>

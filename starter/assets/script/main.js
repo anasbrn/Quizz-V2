@@ -298,6 +298,8 @@ function finalScore(maxScore, length) {
     
     barResultLevel.style.width =`${(maxScore * 100) / length}%`;
     barResultLevel.innerHTML   =`${Number((maxScore * 100) / length)}%`;
+
+    console.log(barResultLevel.innerHTML);
     
 }
 
@@ -453,6 +455,16 @@ function replayQuizz(){
     window.location.reload() ;
 }
 
+
+function submitScore(){
+    var score= $("#barResultLevel").text();
+    $.post("../../../Classes/User.php",{
+        submit:true,
+        barResultLevel:score,
+    },function(){
+        window.alert('Score send successfully');
+    })
+}
 
   
 
