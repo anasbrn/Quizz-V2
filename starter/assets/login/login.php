@@ -1,3 +1,9 @@
+<?php
+    if(isset($_SESSION['id'])) {
+        header('location: ../quizz.php') ;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

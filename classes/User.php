@@ -69,34 +69,55 @@
     
             $connection = new Database ;
             $connection = $connection->connect() ;
-            $query      = "SELECT * FROM user WHERE email = '$email' AND password = '$password' " ;
-            $stmt       = $connection->query($query) ;
+            $queryUser      = "SELECT * FROM user WHERE email = '$email' AND password = '$password' " ;
+            $stmt       = $connection->query($queryUser) ;
             $data       = $stmt->fetch() ;
-            $result     = $stmt->rowCount();
+            $resultUser     = $stmt->rowCount();
+
+            $_SESSION['id'] = $data['userId'] ;
+            $id         = $_SESSION['id'] ;
+            $_SESSION['firstName'] = $data['firstName'] ;
+
+            $queryAdmin      = "SELECT * FROM `admin` WHERE email = '$email' AND password = '$password' " ;
+            $stmt       = $connection->query($queryAdmin) ;
+            $data       = $stmt->fetch() ;
+            $resultAdmin     = $stmt->rowCount();
             
-            if ($result > 0){
-                $query      = "UPDATE user SET  ipAddress = '$ip', os = '$os', browser = '$browser' " ;
+            if ($resultUser > 0){
+                $query      = "UPDATE user SET  ipAddress = '$ip', os = '$os', browser = '$browser' WHERE userId =  $id" ;
                 $stmt       = $connection->query($query) ;
-                $_SESSION['id'] = $data['userId'] ;
-                echo $_SESSION['id'] ;
+                
+                header('location: ../starter/assets/quizz.php') ;
+            }
+
+            else if ($resultAdmin > 0){
+                header('location: ../dashboard/dashboard.php') ;
             }
             
             else{
                 echo 'Invalid account' ;
             }
-            header('location: ../starter/assets/quizz.php') ;
         }
 
-        public static function nameOfContestant(){
-            $id = $_SESSION['id'] ;
-            $connection = new Database ;
-            $connection = $connection->connect() ;
-            $query      = "SELECT firstName FROM user WHERE userId = $id " ;
-            $stmt       = $connection->query($query) ;
-            $data       = $stmt->fetch() ;
-    
-            return $data['firstName'] ;
-        }
+        // public static function messageOfResult(){
+        //     $id = $_SESSION['id'] ;
+        //     $connection = new Database ;
+        //     $connection = $connection->connect() ;
+        //     $query      = "SELECT * FROM user WHERE userId = $id " ;
+        //     $stmt       = $connection->query($query) ;
+        //     $data       = $stmt->fetch() ;
+
+        //     $success = 'Congratulations '.$data['firstName'].'! You have passed the quizz successfully' ;
+        //     $failed = 'unfortunately '.$data['firstName'].'! You have not passed the quizz ' ;
+
+        //     if($data['score'] >= 50){
+        //         return $success ;
+        //     }
+
+        //     else{
+        //         return $failed;
+        //     }
+        // }
         
 
     }
@@ -130,12 +151,29 @@
 
     function scoreOfContestant(){
         $score = $_POST['barResultLevel'] ;
+        $id = $_SESSION['id'] ;
         
         $connection = new Database ;
         $connection = $connection->connect() ;
-        $query      = "UPDATE user SET score = '$score' " ;
-        $stmt       = $connection->query($query) ;
-    }
+        $update      = "UPDATE user SET score = '$score' WHERE userId = $id " ;
+        $stmt       = $connection->query($update) ;
+
+        // $select      = "SELECT * FROM user WHERE userId = $id " ;
+        // $stmt       = $connection->query($select) ;
+        // $data       = $stmt->fetch() ;
+
+        // $success = 'Congratulations '.$data['firstName'].'! You have passed the quizz successfully' ;
+        // $failed = 'unfortunately '.$data['firstName'].'! You have not passed the quizz ' ;
+
+        // if($data['score'] >= 50){
+        //     return $success ;
+        // }
+
+        // else{
+        //     return $failed;
+        // }
+}
+    
 
     
 
@@ -201,5 +239,5 @@
     
 
     if(isset($_POST['register'])) signUp() ;
-    if(isset($_POST['signIn'])) User::signIn() ; User::nameOfContestant() ;
+    if(isset($_POST['signIn'])) User::signIn() ;
     if(isset($_POST['submit']))  scoreOfContestant() ;

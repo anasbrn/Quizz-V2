@@ -27,7 +27,7 @@ function lightmodeQuizz(){
     let lightmode = document.getElementById('lightmode') ;
     let darkmode  = document.getElementById('darkmode') ;
     let background  = document.getElementById('quizz') ;
-    let breadcrumbs  = document.getElementById('breadcrumbs') ;
+    let nameOfContestant  = document.getElementById('nameOfContestant') ;
     let rules  = document.getElementById('rules') ;
     let questions = document.getElementById('questions') ;
     let counter = document.getElementById('counter') ;
@@ -37,11 +37,11 @@ function lightmodeQuizz(){
 
     
     background.style.backgroundImage = "url(/design/img/backgroundLightMode.svg)" ; 
-    breadcrumbs.style.color = "black" ;
+    nameOfContestant.style.color = "black" ;
     titlesStepper.style.color = "black" ;
     rules.style.background = "#CBD5E1" ;
     questions.style.background = "#CBD5E1" ;
-    counter.style.background = "#CBD5E1" ;
+    counter.style.background = "#E2E8F0" ;
     result.style.background = "#CBD5E1" ;
     rules.style.color = "black" ;
     questions.style.color = "black" ;
@@ -50,14 +50,13 @@ function lightmodeQuizz(){
     timerQuestions.style.color = "white" ;
     lightmode.style.display = "none" ;
     darkmode.style.display = "block" ;
-    homeBreadcrumbs.style.color = "black"
 }
 
 function darkmodeQuizz(){
     let lightmode = document.getElementById('lightmode') ;
     let darkmode  = document.getElementById('darkmode') ;
     let background  = document.getElementById('quizz') ;
-    let breadcrumbs  = document.getElementById('breadcrumbs') ;
+    let nameOfContestant  = document.getElementById('nameOfContestant') ;
     let rules  = document.getElementById('rules') ;
     let questions = document.getElementById('questions') ;
     let counter = document.getElementById('counter') ;
@@ -66,11 +65,11 @@ function darkmodeQuizz(){
     let homeBreadcrumbs = document.getElementById('homeBreadcrumbs') ;
     
     background.style.backgroundImage = "url(/design/img/backgroundDarkMode.svg)" ; 
-    breadcrumbs.style.color = "white" ;
+    nameOfContestant.style.color = "white" ;
     titlesStepper.style.color = "white" ;
     rules.style.background = "#555555" ;
     questions.style.background = "#555555" ;
-    counter.style.background = "#555555" ;
+    counter.style.background = "#333333" ;
     result.style.background = "#555555" ;
     rules.style.color = "white" ;
     questions.style.color = "white" ;
@@ -79,7 +78,6 @@ function darkmodeQuizz(){
     timerQuestions.style.color = "white" ;
     lightmode.style.display = "block" ;
     darkmode.style.display = "none" ;
-    homeBreadcrumbs.style.color = "white"
 }
 
 
@@ -230,11 +228,15 @@ function countDownQuestions(){
     clearInterval(timerId);
     timerId = setInterval(countDownQ, 1000);
     var elem = document.getElementById('timerQuestionsSecondes');
-    elem.innerText = 30;
+    elem.innerText = 15;
     elem.style.background = "#555" ;
     
     function countDownQ() {
         let currentQ = document.getElementById('currentQuestion') ;
+
+        // if (elem.innerText <= 10){
+        //     elem.innerHTML = "0" + elem.innerText ;
+        // }
         
         if (elem.innerText <= 5)
         {
@@ -284,11 +286,10 @@ function loadingQuestions(){
 }
 
 
-function changeProgress(maxValue,finalValue){
+function changeProgress(currentValue,maxValue){
     const barLevel = document.querySelector('.barLevel');
     
-    barLevel.style.width =`${(maxValue * 100) / finalValue}%`;
-    barLevel.innerHTML   =`${Number((maxValue * 100) / finalValue)}%`;
+    barLevel.style.width =`${(currentValue * 100) / maxValue}%`;
     
 }
 
@@ -388,6 +389,7 @@ let wrong = 0 ;
 let currnetQ = -1 ;
 
 function determineTheCorrectanswer(){
+    var user = document.getElementById('nameOfContestant').innerText ;
     currnetQ++ ;
     let answer = [] ;
     let answersSelected = document.querySelectorAll('.radio') ;
@@ -411,34 +413,36 @@ function determineTheCorrectanswer(){
 
         if(score >= (quizzQuestions.length / 2)){
             finalScore(score, quizzQuestions.length) ;
-            // var user = document.getElementById('username').value ;
+            console.log(user);
             document.getElementById('barResult').style.backgroundColor = '#ff0000' ;
             document.getElementById('correctAnswers').innerText = 'Correct answers:' + " " + score ; 
             document.getElementById('wrongAnswers').innerText   = 'Wrong answers:' + " " + wrong ; 
-            // document.getElementById('congratulations').innerText = 'Congratulations' + " " + user + "! " + 'You have passed the quizz successfully' ;
+            document.getElementById('congratulations').innerText = 'Congratulations' + " " + user + "! " + 'You have passed the quizz successfully' ;
         }
  
         else{
             finalScore(score, quizzQuestions.length) ;
-            // var user = document.getElementById('username').value ;
+            // var user = document.getElementById('breadcrumbs').innerText ;
+            console.log(user);
             document.getElementById('barResult').style.backgroundColor = '#ff0000' ;
             document.getElementById('correctAnswers').innerText = 'Correct answers:' + " " + score ;
             document.getElementById('wrongAnswers').innerText   = 'Wrong answers:' + " " + wrong ; 
-            // document.getElementById('congratulations').innerText = 'Unfortunately' + " " + user + "! " + "You didn't pass the quizz successfully" ;
+            document.getElementById('congratulations').innerText = 'Unfortunately' + " " + user + "! " + "You didn't pass the quizz successfully" ;
         }
     }
 }
 
 
-function stepperCompenantStep1(){
-    document.getElementById('step1').classList.add('active') ;
-    document.getElementById('step1').innerHTML = `<i class="fa fa-check"></i>`;
+// function stepperCompenantStep1(){
+//     document.getElementById('step1').classList.add('active') ;
+//     document.getElementById('step1').innerHTML = `<i class="fa fa-check"></i>`;
     
-}
+// }
 
 
 function stepperCompenantStep2(){
     document.getElementById('step2').classList.add('active') ;
+    document.getElementById('line1').classList.add('active') ;
     document.getElementById('step2').innerHTML = `<i class="fa fa-check"></i>`;
     
 }
@@ -446,6 +450,7 @@ function stepperCompenantStep2(){
 
 function stepperCompenantStep3(){
     document.getElementById('step3').classList.add('active') ;
+    document.getElementById('line2').classList.add('active') ;
     document.getElementById('step3').innerHTML = `<i class="fa fa-check"></i>`;
     
 }
@@ -462,7 +467,7 @@ function submitScore(){
         submit:true,
         barResultLevel:score,
     },function(){
-        window.alert('Score send successfully');
+        // window.alert('Score send successfully');
     })
 }
 

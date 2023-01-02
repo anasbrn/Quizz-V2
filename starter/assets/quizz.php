@@ -1,6 +1,9 @@
 <?php
     include '../../Classes/GetData.php' ;
     include '../../Classes/User.php' ;
+    if(!isset($_SESSION['id'])) {
+        header('location: ./login/login.php') ;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +20,14 @@
     <?php 
         GetData::getQuestions() ;
     ?>
+
+    <div class="bar" id="bar">
+        <div class="barLevel"></div>
+    </div>
+
     <div class="navbar">
-        <div class="breadcrumbs" id="breadcrumbs">
-            <ul style="list-style: none; display: flex; padding: 0;">
-                <li style="margin-right: 5px;"><a href="../../index.php" style="text-decoration: none; color: white;" id="homeBreadcrumbs">Home</a></li>
-                <li style="margin-right: 5px;">/</li>
-                <li style="margin-right: 5px; color: gray;">Quizz</li>
-            </ul>
+        <div class="breadcrumbs" id="nameOfContestant">
+            <?= $_SESSION['firstName'] ?>
         </div>
         <div class="logo"><img src="/design/img/logo.svg" alt="" width="400">
         </div>
@@ -33,9 +37,12 @@
 
     <div class="stepperComponentParent">
         <div class="stepperComponent">
-            <div id="step1" class="step1 active"><i class="fa fa-check"></i></div>
-            <div id="step2" class="step2">2</div>
-            <div id="step3" class="step3">3</div>
+            <div id="step1" class="steps active"><i class="fa fa-check"></i></div>
+                <div class="line1" id="line1"></div>
+                <div id="step2" class="steps">2</div>
+                <div class="line2" id="line2"></div>
+                <div id="step3" class="steps">3</div>
+            </div>
         </div>
     </div>
 
@@ -111,9 +118,6 @@
             </div>
 
             <div class="next_button">
-                <div class="bar" id="bar">
-                    <div class="barLevel"></div>
-                </div>
                 <div class="QuestionsButtons">
                     <button id="nextQuestion" class="next_button_question" onclick="emptyAnswer()">Next question</button>
                     <!-- <form action="../../classes/User.php" method="POST"> -->
@@ -124,17 +128,11 @@
             </div>
         </div>
 
-        <?php
-            $data = User::nameOfContestant() ;
-        ?>
-
         <div id="result" class="result">
-            <div class="titles" id="congratulations">Completed <?= $data ?>!  You have passed the quizz</div>
+            <div class="titles" id="congratulations"></div>
             <div class="score">Your score is</div>
             <div class="barResult" id="barResult">
-                <!-- <form action="../../classes/User.php" method="POST"> -->
-                    <div class="barResultLevel" name="barResultLevel" id="barResultLevel"></div>
-                <!-- </form> -->
+                <div class="barResultLevel" name="barResultLevel" id="barResultLevel"></div>
             </div>
             <div class="answersFinal">
                 <div class="correctAnswers" id="correctAnswers">Correct answers: </div>

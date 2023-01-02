@@ -56,9 +56,25 @@
         background-color: $content;
         text-align: center;
         padding: 1rem;
-        margin-left: 3rem;
         border-radius: 10px;
         cursor: pointer;
+    }
+
+    
+    
+    .logoutAdmin{
+        text-decoration: none;
+        color: white;
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .logout:hover{
+        .logoutAdmin{
+            display: block;
+            transition: 0.6s;
+        }
     }
 
 }
@@ -68,12 +84,39 @@
     background-size: 300%;
     background-repeat: no-repeat;
     background-position: center;
+    margin: 0;
+    padding: 0;
     
 }
 
+.dashboard{
+    // text-align: center;
+    color: $text;
+    margin: 10px 20px;
+
+    table {
+        border: none !important;
+        border-radius: 10px;
+        background: $content;
+        font-family: arial, sans-serif;
+        width: 100%;
+      }
+      
+      td{
+        text-align: center;
+        padding: 20px;
+      }
+
+      th{
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid $text;
+      }
+      
+      
+}
+
 .quizzContainer{
-    // margin: auto;
-    // padding: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,12 +155,13 @@
 
 .stepperComponent{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 40%;
     // position: fixed;
     // top: 5%;
     
-    div{
+    .steps{
         background-color: $dark;
         color: $text;
         padding: 10px;
@@ -125,40 +169,30 @@
         border-radius: 50%;
         text-align: center;
         position: relative;
+        z-index: 1;
+    }
 
-        &::after{
-            content: "";
-            width: 15.75rem;
-            height: 5px;
-            background-color: $dark;
-            position: absolute;
-            right: 2rem;
-            bottom: 1rem;
-        }
+    .line1{
+        height: .2rem;
+        background: $dark;
+        width: 50%;
+        // z-index: -1;
+    }
 
-        &.step1::after{
-            width: 0;
-            height: 0;
-        }
+    .line2{
+        height: .2rem;
+        background: $dark;
+        width: 50%;
+        // z-index: -1;
+    }
 
-        &.active{
-            background-color: $buttons;
-            transition: .6s;
+    .active{
+        background-color: $buttons;
+        transition: .6s;
+    }
 
-            &::after{
-                background-color: $buttons;
-                transition: .6s;
-
-            }
-        }
-
-        // span{
-        //     // background-color: $dark;
-        // }
-        
-        i{
-            background-color: $buttons;
-        }
+    .fa-check{
+        transform: .6s;
     }
 
 
@@ -230,7 +264,7 @@
     .next_button{
         background-color: inherit;
         display: flex;
-        justify-content: space-between;
+        justify-content: end;
     }
 
     p{
@@ -241,11 +275,9 @@
 //counter start quizz
 #counter{
     display: none;
-    background-color: inherit;
+    background-color: $background;
     padding: 5px 10px;
-    border-radius: 10px; 
     width: 60%;
-    box-shadow: 2px 3px 15px #0003;
     
 
     span{
@@ -339,10 +371,10 @@
 //progress bar
 .bar {
     display: none;
-    width: 60%;
-    margin-top: 2rem;
-    height: 1rem;
-    background-color: $dark;
+    width: 100%;
+    margin: 0;
+    height: .2rem;
+    // background-color: $dark;
     border-radius: 10px;
     color: $text;
   }
