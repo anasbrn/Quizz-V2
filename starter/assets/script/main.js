@@ -341,6 +341,7 @@ function lightmodeQuizz(){
     let lightmode = document.getElementById('lightmode') ;
     let darkmode  = document.getElementById('darkmode') ;
     let background  = document.getElementById('quizz') ;
+    let buttonDarkModeBack = document.getElementById('buttonDarkMode');
     let nameOfContestant  = document.getElementById('nameOfContestant') ;
     let rules  = document.getElementById('rules') ;
     let questions = document.getElementById('questions') ;
@@ -357,6 +358,7 @@ function lightmodeQuizz(){
     questions.style.background = "#CBD5E1" ;
     counter.style.background = "#E2E8F0" ;
     result.style.background = "#CBD5E1" ;
+    
     rules.style.color = "black" ;
     questions.style.color = "black" ;
     counter.style.color = "black" ;
@@ -364,12 +366,15 @@ function lightmodeQuizz(){
     timerQuestions.style.color = "white" ;
     lightmode.style.display = "none" ;
     darkmode.style.display = "block" ;
+    buttonDarkModeBack.style.background = "#CBD5E1" ;
+    buttonDarkModeBack.style.color = "black" ;
 }
 
 function darkmodeQuizz(){
     let lightmode = document.getElementById('lightmode') ;
     let darkmode  = document.getElementById('darkmode') ;
     let background  = document.getElementById('quizz') ;
+    let buttonDarkModeBack = document.getElementById('buttonDarkMode');
     let nameOfContestant  = document.getElementById('nameOfContestant') ;
     let rules  = document.getElementById('rules') ;
     let questions = document.getElementById('questions') ;
@@ -392,6 +397,8 @@ function darkmodeQuizz(){
     timerQuestions.style.color = "white" ;
     lightmode.style.display = "block" ;
     darkmode.style.display = "none" ;
+    buttonDarkModeBack.style.background = "#555" ;
+    buttonDarkModeBack.style.color = "white" ;
 }
 
 
@@ -419,7 +426,7 @@ function darkmode(){
 function lightmodeLogin(){
     let background  = document.getElementById('quizz') ;
     let breadcrumbs  = document.getElementById('breadcrumbs') ;
-    // let homeBreadcrumbs = document.getElementById('homeBreadCrumbs') ;
+    let buttonDarkModeBack = document.getElementById('buttonDarkMode');
     let login  = document.getElementById('login') ;
     let buttonLightMode  = document.getElementById('lightmode') ;
     let buttonDarkMode  = document.getElementById('darkmode') ;
@@ -427,7 +434,8 @@ function lightmodeLogin(){
     background.style.backgroundImage = "url(/design/img/backgroundLightMode.svg)" ; 
 
     breadcrumbs.style.color = "black" ;
-    // homeBreadcrumbs.style.color = "black"
+    buttonDarkModeBack.style.background = "#CBD5E1" ;
+    buttonDarkModeBack.style.color = "black" ;
     login.style.background = "#CBD5E1" ;
     login.style.color = "black" ;
     buttonLightMode.style.display = "none" ;
@@ -437,14 +445,15 @@ function lightmodeLogin(){
 function darkmodeLogin(){
     let background  = document.getElementById('quizz') ;
     let breadcrumbs  = document.getElementById('breadcrumbs') ;
-    // let homeBreadcrumbs = document.getElementById('homeBreadCrumbs') ;
+    let buttonDarkModeBack = document.getElementById('buttonDarkMode');
     let login  = document.getElementById('login') ;
     let buttonLightMode  = document.getElementById('lightmode') ;
     let buttonDarkMode  = document.getElementById('darkmode') ;
 
     background.style.backgroundImage = "url(/design/img/backgroundDarkMode.svg)" ; 
     breadcrumbs.style.color = "white" ;
-    // homeBreadcrumbs.style.color = "white"
+    buttonDarkModeBack.style.background = "#555" ;
+    buttonDarkModeBack.style.color = "white" ;
     login.style.background = "#555555" ;
     login.style.color = "white" ;
     buttonLightMode.style.display = "block" ;

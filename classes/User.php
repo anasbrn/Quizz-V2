@@ -157,21 +157,6 @@
         $connection = $connection->connect() ;
         $update      = "UPDATE user SET score = '$score' WHERE userId = $id " ;
         $stmt       = $connection->query($update) ;
-
-        // $select      = "SELECT * FROM user WHERE userId = $id " ;
-        // $stmt       = $connection->query($select) ;
-        // $data       = $stmt->fetch() ;
-
-        // $success = 'Congratulations '.$data['firstName'].'! You have passed the quizz successfully' ;
-        // $failed = 'unfortunately '.$data['firstName'].'! You have not passed the quizz ' ;
-
-        // if($data['score'] >= 50){
-        //     return $success ;
-        // }
-
-        // else{
-        //     return $failed;
-        // }
 }
     
 

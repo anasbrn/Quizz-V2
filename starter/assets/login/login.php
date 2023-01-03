@@ -25,8 +25,8 @@
         </div>
         <div class="logo"><img src="/design/img/logo.svg" alt="" width="400">
         </div>
-        <div class="lightmode" id="lightmode" ><i class="fa fa-sun" onclick="lightmodeLogin()"></i></div>
-        <div style="display: none;" class="darkmode" id="darkmode" ><i class="fa fa-moon" onclick="darkmodeLogin()"></i></div>
+        <div class="lightmode" id="lightmode" ><i class="fa fa-sun" id="buttonLightMode" onclick="lightmodeLogin()"></i></div>
+        <div style="display: none;" class="darkmode" id="darkmode" ><i class="fa fa-moon" id="buttonDarkMode" onclick="darkmodeLogin()"></i></div>
     </div>
 
     <div class="quizzContainer">

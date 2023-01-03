@@ -32,8 +32,8 @@
         </div>
         <div class="logo"><img src="/design/img/logo.svg" alt="" width="400">
         </div>
-        <div class="lightmode" id="lightmode" ><i class="fa fa-sun" onclick="lightmodeQuizz()"></i></div>
-        <div style="display: none;" class="darkmode" id="darkmode" ><i class="fa fa-moon" onclick="darkmodeQuizz()"></i></div>
+        <div class="lightmode" id="lightmode" ><i class="fa fa-sun" id="buttonLightMode" onclick="lightmodeQuizz()"></i></div>
+        <div style="display: none;" class="darkmode" id="darkmode" ><i class="fa fa-moon" id="buttonDarkMode" onclick="darkmodeQuizz()"></i></div>
     </div>
 
     <div class="stepperComponentParent">
