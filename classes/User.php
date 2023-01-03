@@ -142,10 +142,10 @@
 
         $connection = new Database ;
         $connection = $connection->connect() ;
-        $query      = "INSERT INTO user (firstName, lastName, email, password) VALUES ('$firstName', '$lastName', '$email', '$password')" ;
+        $query      = "INSERT INTO user (firstName, lastName, email, password, quizzId) VALUES ('$firstName', '$lastName', '$email', '$password', 1)" ;
         $stmt       = $connection->query($query) ;
 
-        header('location: ../starter/assets/user_space/signIn.php') ;
+        header('location: ../starter/assets/login/login.php') ;
 
     }
 

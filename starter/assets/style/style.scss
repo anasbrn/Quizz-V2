@@ -81,9 +81,7 @@
 
 .quizz{
     background-image: url(/design/img/backgroundDarkMode.svg);
-    background-size: 300%;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: 80%;
     margin: 0;
     padding: 0;
     
@@ -128,7 +126,7 @@
         background-color: $content;
         padding: 2rem 5rem;
         border-radius: 10px;
-        margin-top: 5rem;
+        margin-top: 10rem;
 
         div{
             display: flex;

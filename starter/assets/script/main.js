@@ -3,139 +3,7 @@ const newQuestion = quizzQuestions.sort((a, b) => 0.5 - Math.random());
 let currnetQuestion = -1;
 
 
-function lightmode(){
-    let lightmode = document.getElementById('lightmode') ;
-    let darkmode  = document.getElementById('darkmode') ;
-    let background = document.getElementById('homepage') ;
-    let texts       = document.getElementById('homeContent') ;
-    let breadcrumbs = document.getElementById('breadcrumbs') ;
-    let getStarted = document.getElementById('getStarted') ;
-    let quizzBreadCrumbs = document.getElementById('quizzBreadCrumbs') ;
 
-    
-    background.style.backgroundImage = "linear-gradient(to left, #4ade80 , #fff)" ;
-    getStarted.style.backgroundImage = "linear-gradient(to left, #09834a , #4ade80)" ;
-    texts.style.color = "#333" ;
-    breadcrumbs.style.color = "#333" ;
-    lightmode.style.display = "none" ;
-    darkmode.style.display = "block" ;
-    quizzBreadCrumbs.style.color = "black"
-}
-
-
-function lightmodeQuizz(){
-    let lightmode = document.getElementById('lightmode') ;
-    let darkmode  = document.getElementById('darkmode') ;
-    let background  = document.getElementById('quizz') ;
-    let nameOfContestant  = document.getElementById('nameOfContestant') ;
-    let rules  = document.getElementById('rules') ;
-    let questions = document.getElementById('questions') ;
-    let counter = document.getElementById('counter') ;
-    let result = document.getElementById('result') ;
-    let timerQuestions = document.getElementById('timerQuestions') ;
-    let homeBreadcrumbs = document.getElementById('homeBreadcrumbs') ;
-
-    
-    background.style.backgroundImage = "url(/design/img/backgroundLightMode.svg)" ; 
-    nameOfContestant.style.color = "black" ;
-    titlesStepper.style.color = "black" ;
-    rules.style.background = "#CBD5E1" ;
-    questions.style.background = "#CBD5E1" ;
-    counter.style.background = "#E2E8F0" ;
-    result.style.background = "#CBD5E1" ;
-    rules.style.color = "black" ;
-    questions.style.color = "black" ;
-    counter.style.color = "black" ;
-    result.style.color = "black" ;
-    timerQuestions.style.color = "white" ;
-    lightmode.style.display = "none" ;
-    darkmode.style.display = "block" ;
-}
-
-function darkmodeQuizz(){
-    let lightmode = document.getElementById('lightmode') ;
-    let darkmode  = document.getElementById('darkmode') ;
-    let background  = document.getElementById('quizz') ;
-    let nameOfContestant  = document.getElementById('nameOfContestant') ;
-    let rules  = document.getElementById('rules') ;
-    let questions = document.getElementById('questions') ;
-    let counter = document.getElementById('counter') ;
-    let result = document.getElementById('result') ;
-    let timerQuestions = document.getElementById('timerQuestions') ;
-    let homeBreadcrumbs = document.getElementById('homeBreadcrumbs') ;
-    
-    background.style.backgroundImage = "url(/design/img/backgroundDarkMode.svg)" ; 
-    nameOfContestant.style.color = "white" ;
-    titlesStepper.style.color = "white" ;
-    rules.style.background = "#555555" ;
-    questions.style.background = "#555555" ;
-    counter.style.background = "#333333" ;
-    result.style.background = "#555555" ;
-    rules.style.color = "white" ;
-    questions.style.color = "white" ;
-    counter.style.color = "white" ;
-    result.style.color = "white" ;
-    timerQuestions.style.color = "white" ;
-    lightmode.style.display = "block" ;
-    darkmode.style.display = "none" ;
-}
-
-
-function darkmode(){ 
-    let texts       = document.getElementById('homeContent') ;
-    let lightmode = document.getElementById('lightmode') ;
-    let darkmode  = document.getElementById('darkmode') ;
-    let background = document.getElementById('homepage') ;
-    let breadcrumbs = document.getElementById('breadcrumbs') ;
-    let getStarted = document.getElementById('getStarted') ;
-    let quizzBreadCrumbs = document.getElementById('quizzBreadCrumbs') ;
-
-
-
-        background.style.backgroundImage = "linear-gradient(to right, black , #23BE75)"
-        getStarted.style.backgroundImage = "linear-gradient(to left, #23BE75 , #09834a)" ;
-        texts.style.color = "white" ;
-        breadcrumbs.style.color = "white" ;
-        lightmode.style.display = "block" ;
-        darkmode.style.display = "none" ;
-        quizzBreadCrumbs.style.color = "white"
-
-}
-
-function lightmodeLogin(){
-    let background  = document.getElementById('quizz') ;
-    let breadcrumbs  = document.getElementById('breadcrumbs') ;
-    // let homeBreadcrumbs = document.getElementById('homeBreadCrumbs') ;
-    let login  = document.getElementById('login') ;
-    let buttonLightMode  = document.getElementById('lightmode') ;
-    let buttonDarkMode  = document.getElementById('darkmode') ;
-
-    background.style.backgroundImage = "url(/design/img/backgroundLightMode.svg)" ; 
-
-    breadcrumbs.style.color = "black" ;
-    // homeBreadcrumbs.style.color = "black"
-    login.style.background = "#CBD5E1" ;
-    login.style.color = "black" ;
-    buttonLightMode.style.display = "none" ;
-    buttonDarkMode.style.display = "block" ;
-}
-
-function darkmodeLogin(){
-    let background  = document.getElementById('quizz') ;
-    let breadcrumbs  = document.getElementById('breadcrumbs') ;
-    // let homeBreadcrumbs = document.getElementById('homeBreadCrumbs') ;
-    let login  = document.getElementById('login') ;
-    let buttonLightMode  = document.getElementById('lightmode') ;
-    let buttonDarkMode  = document.getElementById('darkmode') ;
-
-    background.style.backgroundImage = "url(/design/img/backgroundDarkMode.svg)" ; 
-    breadcrumbs.style.color = "white" ;
-    // homeBreadcrumbs.style.color = "white"
-    login.style.background = "#555555" ;
-    login.style.color = "white" ;
-    buttonLightMode.style.display = "block" ;
-    buttonDarkMode.style.display = "none" ;
-}
 
 function switchFromSignInToSingUp(){
     document.getElementById('signInSection').style.display = "none" ;
@@ -160,19 +28,6 @@ function loadingQuizz(){
     },500) ;
 }
 
-
-// function getStarted(){
-//     document.getElementById('loadingQuizz').style.display = "block" ;
-//     document.getElementById('userName').style.display = "none" ;
-    
-//     setTimeout(function() {
-//         $('#loadingQuizz').fadeOut('100');
-//     }, 3000);
-//     setTimeout(function() {
-//         $('#rules').fadeIn('100');
-//     }, 3500);
-    
-// }
 
 
 function switchFromRulesToCounter(){
@@ -234,10 +89,6 @@ function countDownQuestions(){
     function countDownQ() {
         let currentQ = document.getElementById('currentQuestion') ;
 
-        // if (elem.innerText <= 10){
-        //     elem.innerHTML = "0" + elem.innerText ;
-        // }
-        
         if (elem.innerText <= 5)
         {
             elem.style.background = "red" ;
@@ -433,12 +284,6 @@ function determineTheCorrectanswer(){
 }
 
 
-// function stepperCompenantStep1(){
-//     document.getElementById('step1').classList.add('active') ;
-//     document.getElementById('step1').innerHTML = `<i class="fa fa-check"></i>`;
-    
-// }
-
 
 function stepperCompenantStep2(){
     document.getElementById('step2').classList.add('active') ;
@@ -471,6 +316,182 @@ function submitScore(){
     })
 }
 
+
+function lightmode(){
+    let lightmode = document.getElementById('lightmode') ;
+    let darkmode  = document.getElementById('darkmode') ;
+    let background = document.getElementById('homepage') ;
+    let texts       = document.getElementById('homeContent') ;
+    let breadcrumbs = document.getElementById('breadcrumbs') ;
+    let getStarted = document.getElementById('getStarted') ;
+    let quizzBreadCrumbs = document.getElementById('quizzBreadCrumbs') ;
+
+    
+    background.style.backgroundImage = "linear-gradient(to left, #4ade80 , #fff)" ;
+    getStarted.style.backgroundImage = "linear-gradient(to left, #09834a , #4ade80)" ;
+    texts.style.color = "#333" ;
+    breadcrumbs.style.color = "#333" ;
+    lightmode.style.display = "none" ;
+    darkmode.style.display = "block" ;
+    quizzBreadCrumbs.style.color = "black"
+}
+
+
+function lightmodeQuizz(){
+    let lightmode = document.getElementById('lightmode') ;
+    let darkmode  = document.getElementById('darkmode') ;
+    let background  = document.getElementById('quizz') ;
+    let nameOfContestant  = document.getElementById('nameOfContestant') ;
+    let rules  = document.getElementById('rules') ;
+    let questions = document.getElementById('questions') ;
+    let counter = document.getElementById('counter') ;
+    let result = document.getElementById('result') ;
+    let timerQuestions = document.getElementById('timerQuestions') ;
+    let homeBreadcrumbs = document.getElementById('homeBreadcrumbs') ;
+
+    
+    background.style.backgroundImage = "url(/design/img/backgroundLightMode.svg)" ; 
+    nameOfContestant.style.color = "black" ;
+    titlesStepper.style.color = "black" ;
+    rules.style.background = "#CBD5E1" ;
+    questions.style.background = "#CBD5E1" ;
+    counter.style.background = "#E2E8F0" ;
+    result.style.background = "#CBD5E1" ;
+    rules.style.color = "black" ;
+    questions.style.color = "black" ;
+    counter.style.color = "black" ;
+    result.style.color = "black" ;
+    timerQuestions.style.color = "white" ;
+    lightmode.style.display = "none" ;
+    darkmode.style.display = "block" ;
+}
+
+function darkmodeQuizz(){
+    let lightmode = document.getElementById('lightmode') ;
+    let darkmode  = document.getElementById('darkmode') ;
+    let background  = document.getElementById('quizz') ;
+    let nameOfContestant  = document.getElementById('nameOfContestant') ;
+    let rules  = document.getElementById('rules') ;
+    let questions = document.getElementById('questions') ;
+    let counter = document.getElementById('counter') ;
+    let result = document.getElementById('result') ;
+    let timerQuestions = document.getElementById('timerQuestions') ;
+    let homeBreadcrumbs = document.getElementById('homeBreadcrumbs') ;
+    
+    background.style.backgroundImage = "url(/design/img/backgroundDarkMode.svg)" ; 
+    nameOfContestant.style.color = "white" ;
+    titlesStepper.style.color = "white" ;
+    rules.style.background = "#555555" ;
+    questions.style.background = "#555555" ;
+    counter.style.background = "#333333" ;
+    result.style.background = "#555555" ;
+    rules.style.color = "white" ;
+    questions.style.color = "white" ;
+    counter.style.color = "white" ;
+    result.style.color = "white" ;
+    timerQuestions.style.color = "white" ;
+    lightmode.style.display = "block" ;
+    darkmode.style.display = "none" ;
+}
+
+
+function darkmode(){ 
+    let texts       = document.getElementById('homeContent') ;
+    let lightmode = document.getElementById('lightmode') ;
+    let darkmode  = document.getElementById('darkmode') ;
+    let background = document.getElementById('homepage') ;
+    let breadcrumbs = document.getElementById('breadcrumbs') ;
+    let getStarted = document.getElementById('getStarted') ;
+    let quizzBreadCrumbs = document.getElementById('quizzBreadCrumbs') ;
+
+
+
+        background.style.backgroundImage = "linear-gradient(to right, black , #23BE75)"
+        getStarted.style.backgroundImage = "linear-gradient(to left, #23BE75 , #09834a)" ;
+        texts.style.color = "white" ;
+        breadcrumbs.style.color = "white" ;
+        lightmode.style.display = "block" ;
+        darkmode.style.display = "none" ;
+        quizzBreadCrumbs.style.color = "white"
+
+}
+
+function lightmodeLogin(){
+    let background  = document.getElementById('quizz') ;
+    let breadcrumbs  = document.getElementById('breadcrumbs') ;
+    // let homeBreadcrumbs = document.getElementById('homeBreadCrumbs') ;
+    let login  = document.getElementById('login') ;
+    let buttonLightMode  = document.getElementById('lightmode') ;
+    let buttonDarkMode  = document.getElementById('darkmode') ;
+
+    background.style.backgroundImage = "url(/design/img/backgroundLightMode.svg)" ; 
+
+    breadcrumbs.style.color = "black" ;
+    // homeBreadcrumbs.style.color = "black"
+    login.style.background = "#CBD5E1" ;
+    login.style.color = "black" ;
+    buttonLightMode.style.display = "none" ;
+    buttonDarkMode.style.display = "block" ;
+}
+
+function darkmodeLogin(){
+    let background  = document.getElementById('quizz') ;
+    let breadcrumbs  = document.getElementById('breadcrumbs') ;
+    // let homeBreadcrumbs = document.getElementById('homeBreadCrumbs') ;
+    let login  = document.getElementById('login') ;
+    let buttonLightMode  = document.getElementById('lightmode') ;
+    let buttonDarkMode  = document.getElementById('darkmode') ;
+
+    background.style.backgroundImage = "url(/design/img/backgroundDarkMode.svg)" ; 
+    breadcrumbs.style.color = "white" ;
+    // homeBreadcrumbs.style.color = "white"
+    login.style.background = "#555555" ;
+    login.style.color = "white" ;
+    buttonLightMode.style.display = "block" ;
+    buttonDarkMode.style.display = "none" ;
+}
+
+function lightmodeDashboard(){
+    let background  = document.getElementById('quizz') ;
+    let buttonLightMode  = document.getElementById('lightmode') ;
+    let buttonDarkMode  = document.getElementById('darkmode') ;
+    let buttonDarkModeBack = document.getElementById('buttonDarkMode');
+    let logoutButtonBack = document.getElementById('logoutButton');
+    let table           = document.getElementById('table') ;
+    let titleDashboard  = document.getElementById('titleDashboard') ;
+
+    background.style.backgroundImage = "url(/design/img/backgroundLightMode.svg)" ; 
+    table.style.background  = "#CBD5E1" ;
+    table.style.color  = "black" ;
+    titleDashboard.style.color = "black" ;
+    buttonLightMode.style.display = "none" ;
+    buttonDarkModeBack.style.background = "#CBD5E1" ;
+    buttonDarkModeBack.style.color = "black" ;
+    logoutButtonBack.style.background = "#CBD5E1" ;
+    logoutButtonBack.style.color = "black" ;
+    buttonDarkMode.style.display = "block" ;
+}
+
+function darkmodeDashboard(){
+    let background  = document.getElementById('quizz') ;
+    let buttonLightMode  = document.getElementById('lightmode') ;
+    let buttonDarkMode  = document.getElementById('darkmode') ;
+    let buttonDarkModeBack = document.getElementById('buttonDarkMode');
+    let logoutButtonBack = document.getElementById('logoutButton');
+    let table           = document.getElementById('table') ;
+    let titleDashboard  = document.getElementById('titleDashboard') ;
+
+    background.style.backgroundImage = "url(/design/img/backgroundDarkMode.svg)" ; 
+    table.style.background  = "#555" ;
+    table.style.color  = "white" ;
+    titleDashboard.style.color = "white" ;
+    buttonLightMode.style.display = "block" ;
+    buttonDarkMode.style.display = "none" ;
+    buttonDarkModeBack.style.background = "#555" ;
+    buttonDarkModeBack.style.color = "white" ;
+    logoutButtonBack.style.background = "#555" ;
+    logoutButtonBack.style.color = "white" ;
+}
   
 
 

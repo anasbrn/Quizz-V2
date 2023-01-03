@@ -13,8 +13,8 @@
         <div class="breadcrumbs" id="breadcrumbs">
             <ul style="list-style: none; display: flex; padding: 0;">
                 <li style="margin-right: 5px; color: gray;">Home</li>
-                <li style="margin-right: 5px;">></li>
-                <li><a onclick="loadingQuizz()" style="text-decoration: none; color: white; cursor: pointer;" id="quizzBreadCrumbs">Quizz</a></li>
+                <!-- <li style="margin-right: 5px;">></li> -->
+                <!-- <li><a onclick="loadingQuizz()" style="text-decoration: none; color: white; cursor: pointer;" id="quizzBreadCrumbs">Quizz</a></li> -->
             </ul>
         </div>
 

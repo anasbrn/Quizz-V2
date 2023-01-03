@@ -18,8 +18,8 @@
 <div class="navbar">
         <div class="breadcrumbs" id="breadcrumbs">
             <ul style="list-style: none; display: flex; padding: 0;">
-                <li style="margin-right: 5px;"><a href="../../../index.php" style="text-decoration: none; color: white;" id="homeBreadcrumbs">Home</a></li>
-                <li style="margin-right: 5px;">></li>
+                <!-- <li style="margin-right: 5px;"><a href="../../../index.php" style="text-decoration: none; color: white;" id="homeBreadcrumbs">Home</a></li>
+                <li style="margin-right: 5px;">></li> -->
                 <li style="margin-right: 5px; color: gray;">Login</li>
             </ul>
         </div>
@@ -80,12 +80,13 @@
                     <div>
                         <label for="signIn"></label>
                         <button type="submit" name="signIn" id="signIn">Sign In</button>
-                        <div><p>You don't have an account? <a class="switchFromSignInToSingUp" onclick="switchFromSignInToSingUp()" style="cursor: pointer;" onmouseover="this.style.color = '#23BE75'" onmouseout="this.style.color = 'white'"><b>Sign Up</b></a></p>
+                        <div><p>You don't have an account? <a class="switchFromSignInToSingUp" onclick="switchFromSignInToSingUp()" style="cursor: pointer;" onmouseover="this.style.color = '#23BE75'" onmouseout="this.style.color = 'white'"><b>Sign Up</b></a></p></div>
                     </div>
                 </form>
             </div>
         </section>
     </div>
+    
     <script src="/starter/assets/script/main.js"></script>
 </body>
 </html>

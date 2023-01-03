@@ -26,9 +26,7 @@
     </div>
 
     <div class="navbar">
-        <div class="breadcrumbs" id="nameOfContestant" hidden>
-            <?= $_SESSION['firstName'] ?>
-        </div>
+        <div class="breadcrumbs" id="nameOfContestant" hidden><?= $_SESSION['firstName'] ?></div>
         <div class="logout" id="logout">
             <i class="fa-solid fa-right-from-bracket" style="background: #333;"></i><a class="logoutAdmin" href="./login/login.php">Logout</a>
         </div>
@@ -143,7 +141,7 @@
             </div>
                 <div style="display: flex; justify-content: center;">
                 <a style="margin-right: 10px;" onclick="replayQuizz()">Replay quizz</a>
-                <a href="../../index.php">Home page</a>
+                <a href="./login/login.php">Logout</a>
             </div>
         </div>
     </div>

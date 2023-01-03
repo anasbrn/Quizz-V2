@@ -1,6 +1,6 @@
 Quizz is an application web for testing the visitor in PHP language, it contains several questions either single answer or several.
 
-This application web create and developped by a lot of languages and tools like HTML, CSS, SASS, JAVASCRIPT (ES6+) etc. we have some rules during the test, among this rules:
+This application web create and developped by a lot of languages and tools like HTML, CSS, SASS, JAVASCRIPT (ES6+), PHP etc. we have some rules during the test, among this rules:
 - User can see the three levels of the web application (Information, Questionnaire and Result.
 - The user can see a progress counter that checks the percentage of the quiz.
 - The user must have the quiz questions randomly.

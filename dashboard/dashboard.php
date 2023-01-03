@@ -16,18 +16,18 @@
 <body class="quizz" id="quizz">
     <div class="navbar">
         <div class="logout" id="logout">
-            <i class="fa-solid fa-right-from-bracket" style="background: #333;"></i><a class="logoutAdmin" href="../starter/assets/login/login.php">Logout</a>
+            <i class="fa-solid fa-right-from-bracket" id="logoutButton"></i><a class="logoutAdmin" href="../starter/assets/login/login.php">Logout</a>
         </div>
         <div class="logo"><img src="/design/img/logo.svg" alt="" width="400">
         </div>
-        <div class="lightmode" id="lightmode" ><i class="fa fa-sun" onclick="lightmodeQuizz()"></i></div>
-        <div style="display: none;" class="darkmode" id="darkmode" ><i class="fa fa-moon" onclick="darkmodeQuizz()"></i></div>
+        <div class="lightmode" id="lightmode" ><i class="fa fa-sun" id="buttonLightMode" onclick="lightmodeDashboard()"></i></div>
+        <div style="display: none;" class="darkmode" id="darkmode" ><i class="fa fa-moon" id="buttonDarkMode" onclick="darkmodeDashboard()"></i></div>
     </div>
 
     <div class="dashboard">
-        <h1>Dashboard</h1>
+        <h1 id="titleDashboard">Dashboard</h1>
    
-    <table style="border: 2px solid white;">
+    <table id="table" style="border: 2px solid white;">
         <thead>
             <tr>
                 <th>Name</th>
@@ -60,6 +60,6 @@
         </tbody>
     </table>
     </div>
-
+            <script src="../starter/assets/script/main.js"></script>
 </body>
 </html>
